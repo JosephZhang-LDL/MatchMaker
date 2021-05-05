@@ -9,3 +9,13 @@ export const TabContainer = styled(Flex).attrs(props => ({
 }))`
     border-radius: 5px;
 `;
+
+export const Row = styled(Flex).attrs(props => ({
+    direction: "row",
+}))`
+`;
+
+export const Col = styled(Flex).attrs(props => ({
+    direction: "column"
+}))`
+`;

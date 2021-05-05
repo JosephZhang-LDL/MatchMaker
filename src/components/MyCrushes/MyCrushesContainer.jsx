@@ -1,17 +1,18 @@
 import React from "react";
-import { Box, Flex } from "@chakra-ui/react";
-import { TabContainer } from "../general/Standard";
+import { Box, Flex, HStack, Spacer, VStack } from "@chakra-ui/react";
+import Sidebar from "./Sidebar";
+import CrushAdder from "./CrushAdder";
 
 const MyCrushesContainer = (props) => {
   return (
     <Box px="5em" py="3em">
-      <Flex direction="row">
-        <TabContainer flex="30%" mr="5">
-          HELLO!
-        </TabContainer>
-        <TabContainer flex="70%" ml="5">
-          HELLO!
-        </TabContainer>
+      <Flex spacing="10">
+        <Sidebar />
+        <Spacer flex="3%" />
+        <Box width="100%" direction="column">
+          <CrushAdder />
+          <CrushAdder />
+        </Box>
       </Flex>
     </Box>
   );
