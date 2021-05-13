@@ -8,10 +8,11 @@ import {
   Flex,
   Button,
   Avatar,
-  SimpleGrid
+  SimpleGrid,
 } from "@chakra-ui/react";
 import { TabContainer, Row, Col } from "../general/Standard";
 import { FiHeart } from "react-icons/fi";
+import { IoClose } from "react-icons/io5";
 
 const crushes = [
   {
@@ -61,20 +62,6 @@ const CrushAdder = (props) => {
               username={crush.username}
             />
           ))}
-          {crushes.map((crush) => (
-            <CrushBox
-              name={crush.name}
-              profPic={crush.profPic}
-              username={crush.username}
-            />
-          ))}
-          {crushes.map((crush) => (
-            <CrushBox
-              name={crush.name}
-              profPic={crush.profPic}
-              username={crush.username}
-            />
-          ))}
         </SimpleGrid>
       </TabContainer>
     </Box>
@@ -83,20 +70,22 @@ const CrushAdder = (props) => {
 
 const CrushBox = (props) => {
   return (
-      <Flex
-        borderRadius="2px"
-        backgroundColor="gray.100"
-        width="100%"
-        px="4"
-        py="2"
-        flexDirection="row"
-        gap="12px"
-      >
+    <Flex
+      borderRadius="2px"
+      backgroundColor="gray.100"
+      width="100%"
+      px="4"
+      py="2"
+      justify="space-between"
+      flexDirection="row"
+      gap="12px"
+    >
+      <Flex>
         <Col>
           <Avatar src={props.profPic} />
         </Col>
         <Col ml="3">
-          <Text fontSize="18px" fontWeight="bold">
+          <Text fontSize="18px" fontWeight="medium">
             {props.name}
           </Text>
           <Text fontSize="14px" color="gray.600" fontWeight="light" mt="-1">
@@ -104,6 +93,19 @@ const CrushBox = (props) => {
           </Text>
         </Col>
       </Flex>
+      <Col alignSelf="center">
+        <Text
+          color="gray.400"
+          _hover={{
+            color: "red.500",
+            cursor: "pointer",
+            transition: ".25s ease",
+          }}
+        >
+          <IoClose size="24px" />
+        </Text>
+      </Col>
+    </Flex>
   );
 };
 
