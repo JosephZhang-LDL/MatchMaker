@@ -28,7 +28,7 @@ const CrushBox = (props) => {
             {props.name}
           </Text>
           <Text fontSize="14px" color="gray.600" fontWeight="light" mt="-1">
-            {props.username}
+            @{props.username}
           </Text>
         </Col>
       </Flex>
@@ -41,7 +41,7 @@ const CrushBox = (props) => {
             transition: ".25s ease",
           }}
         >
-          <IoClose size="24px" />
+          <IoClose size="24px" onClick={props.onClick} />
         </Text>
       </Col>
     </Flex>

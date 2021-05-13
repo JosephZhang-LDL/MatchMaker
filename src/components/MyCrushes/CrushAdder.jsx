@@ -17,7 +17,7 @@ const data = [
     name: "Joe Biden",
     profPic:
       "https://media.distractify.com/brand-img/5wNVKV854/0x0/joe-biden-memes-1586543791437.jpg",
-    username: "@bidenlikesyou",
+    username: "bidenlikesyou",
   },
 ];
 
@@ -36,8 +36,14 @@ const CrushAdder = (props) => {
   };
   const submitCrush = () => {
     console.log(addCrush);
+    //TEMP - CHANGE ACTUAL PROF PIC FUNC
+    setCrushes([...crushes, { ...addCrush, profPic: "" }]);
     setAddCrush({ name: "", username: "" });
   };
+
+  const removeCrush = (index) => {
+    setCrushes(crushes.filter((crush, i) => i !== index));
+  }
 
   return (
     <Box>
@@ -63,7 +69,7 @@ const CrushAdder = (props) => {
             />
           </Col>
           <Col alignSelf="flex-end">
-            <Button type="submit" onClick={submitCrush}>
+            <Button type="submit" onClick={submitCrush} colorScheme="red">
               <FiHeart />
             </Button>
           </Col>
@@ -74,11 +80,14 @@ const CrushAdder = (props) => {
           </Text>
         </Row>
         <SimpleGrid mt="2" columns={2} spacing="5">
-          {crushes.map((crush) => (
+          {crushes.map((crush, index) => (
             <CrushBox
+              key={index}
+              id={index}
               name={crush.name}
               profPic={crush.profPic}
               username={crush.username}
+              onClick={() => removeCrush(index)}
             />
           ))}
         </SimpleGrid>
