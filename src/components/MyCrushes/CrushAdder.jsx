@@ -8,7 +8,7 @@ import {
   Flex,
   Button,
   Avatar,
-  Wrap
+  SimpleGrid
 } from "@chakra-ui/react";
 import { TabContainer, Row, Col } from "../general/Standard";
 import { FiHeart } from "react-icons/fi";
@@ -53,7 +53,7 @@ const CrushAdder = (props) => {
             Crushes 😍
           </Text>
         </Row>
-        <Wrap mt="2" spacing="5">
+        <SimpleGrid mt="2" columns={2} spacing="5">
           {crushes.map((crush) => (
             <CrushBox
               name={crush.name}
@@ -75,7 +75,7 @@ const CrushAdder = (props) => {
               username={crush.username}
             />
           ))}
-        </Wrap>
+        </SimpleGrid>
       </TabContainer>
     </Box>
   );
@@ -86,7 +86,7 @@ const CrushBox = (props) => {
       <Flex
         borderRadius="2px"
         backgroundColor="gray.100"
-        width="50%"
+        width="100%"
         px="4"
         py="2"
         flexDirection="row"
