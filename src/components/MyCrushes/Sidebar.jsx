@@ -1,6 +1,7 @@
 import React from "react";
 import { Text, Box, Avatar, Heading, Wrap, WrapItem } from "@chakra-ui/react";
 import { TabContainer, Row, Col } from "../general/Standard";
+import { IoAdd } from "react-icons/io5";
 
 const imgUrl =
   "https://p7.pstatp.com/origin/pgc-image/4b4fae11e53e4c6bb84587b51b700df2.jpeg";
@@ -12,6 +13,12 @@ const interests = [
   { interest: "Keshi", category: "music" },
   { interest: "88Rising", category: "music" },
 ];
+
+const stats = {
+  crushes: 16,
+  matches: 6,
+  admirers: 182
+}
 
 const Sidebar = (props) => {
   return (
@@ -29,8 +36,30 @@ const Sidebar = (props) => {
         <Heading fontSize="24">Interests</Heading>
       </Row>
       <Wrap mt="2">
-        {interests.map(interest => <InterestTag text={interest.interest} category={interest.category} />)}
+        {interests.map((interest) => (
+          <WrapItem>
+            <InterestTag
+              text={interest.interest}
+              category={interest.category}
+            />
+          </WrapItem>
+        ))}
+        <WrapItem>
+          <AddTagButton />
+        </WrapItem>
       </Wrap>
+      <Row mt="5">
+        <Heading fontSize="24">Statistics</Heading>
+      </Row>
+      <Row mt="2">
+        <Text fontSize="18">Crushes: {stats.crushes} </Text>
+      </Row>
+      <Row mt="1">
+        <Text fontSize="18">Matches: {stats.matches} </Text>
+      </Row>
+      <Row mt="1">
+        <Text fontSize="18">Admirers: {stats.admirers} </Text>
+      </Row>
     </TabContainer>
   );
 };
@@ -60,6 +89,24 @@ const InterestTag = ({ text, category }) => {
       color="white"
     >
       {text}
+    </Box>
+  );
+};
+
+const AddTagButton = (props) => {
+  return (
+    <Box
+      borderRadius="2px"
+      p="1"
+      backgroundColor="gray.500"
+      _hover={{
+        background: "gray.400",
+        transition: ".2s ease",
+        cursor: "pointer",
+      }}
+      color="white"
+    >
+      <IoAdd size={24} />
     </Box>
   );
 };

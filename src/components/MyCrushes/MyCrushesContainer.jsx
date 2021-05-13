@@ -11,7 +11,6 @@ const MyCrushesContainer = (props) => {
         <Spacer flex="3%" />
         <Box width="100%" direction="column">
           <CrushAdder />
-          <CrushAdder />
         </Box>
       </Flex>
     </Box>
