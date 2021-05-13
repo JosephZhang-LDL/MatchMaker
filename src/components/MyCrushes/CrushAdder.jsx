@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Box,
   Heading,
@@ -12,7 +12,7 @@ import { TabContainer, Row, Col } from "../general/Standard";
 import CrushBox from "./CrushBox";
 import { FiHeart } from "react-icons/fi";
 
-const crushes = [
+const data = [
   {
     name: "Joe Biden",
     profPic:
@@ -22,6 +22,23 @@ const crushes = [
 ];
 
 const CrushAdder = (props) => {
+  //Crushes to display under the "Crushes" heading
+  const [crushes, setCrushes] = useState(data);
+
+  //Controlled form data for adding crushes
+  const [addCrush, setAddCrush] = useState({ name: "", username: "" });
+
+  const setName = (e) => {
+    setAddCrush({ ...addCrush, name: e.target.value });
+  };
+  const setUsername = (e) => {
+    setAddCrush({ ...addCrush, username: e.target.value });
+  };
+  const submitCrush = () => {
+    console.log(addCrush);
+    setAddCrush({ name: "", username: "" });
+  };
+
   return (
     <Box>
       <Heading fontSize="28px" mb="2">
@@ -33,16 +50,20 @@ const CrushAdder = (props) => {
             <Text fontSize="20px" fontWeight="medium">
               Name
             </Text>
-            <Input variant="flushed" />
+            <Input variant="flushed" onChange={setName} value={addCrush.name} />
           </Col>
           <Col flex="100%">
             <Text fontSize="20px" fontWeight="medium">
               Instagram User
             </Text>
-            <Input variant="flushed" />
+            <Input
+              variant="flushed"
+              onChange={setUsername}
+              value={addCrush.username}
+            />
           </Col>
           <Col alignSelf="flex-end">
-            <Button>
+            <Button type="submit" onClick={submitCrush}>
               <FiHeart />
             </Button>
           </Col>
