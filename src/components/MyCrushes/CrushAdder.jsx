@@ -29,6 +29,14 @@ const CrushAdder = (props) => {
   //Crushes to display under the "Crushes" heading
   const [crushes, setCrushes] = useState(data);
 
+  const validate = (value) => {
+    let error
+    if (!value) {
+      error = "Required"
+    }
+    return error
+  }
+
   const removeCrush = (index) => {
     setCrushes(crushes.filter((crush, i) => i !== index));
   };
@@ -52,7 +60,7 @@ const CrushAdder = (props) => {
         >
           {(formProps) => (
             <Form>
-              <HStack width="100%" spacing="10">
+              <HStack width="100%" spacing="10" align="flex-start">
                 <Col flex="100%">
                   <Field name="name">
                     {({ field, form }) => (
@@ -60,11 +68,10 @@ const CrushAdder = (props) => {
                         <FormLabel fontSize="20px">Name</FormLabel>
                         <Input
                           variant="flushed"
-                          id="username"
-                          placeholder="Username"
+                          id="name"
+                          placeholder="Name"
                           {...field}
                         />
-                        <FormErrorMessage>{form.errors.name}</FormErrorMessage>
                       </FormControl>
                     )}
                   </Field>
@@ -80,9 +87,6 @@ const CrushAdder = (props) => {
                           placeholder="Username"
                           {...field}
                         />
-                        <FormErrorMessage>
-                          {form.errors.username}
-                        </FormErrorMessage>
                       </FormControl>
                     )}
                   </Field>
