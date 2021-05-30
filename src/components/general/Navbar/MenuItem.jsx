@@ -1,5 +1,6 @@
 import React from "react";
-import { Box, Text, Link } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const NavBox = styled(Box)`
@@ -9,7 +10,7 @@ const NavBox = styled(Box)`
 const MenuItem = (props) => {
   return (
     <NavBox>
-      <Link href={`/${props.link}`}>
+      <Link to={`/${props.link}`}>
         <Text color="gray.600" fontSize="20px">
           {props.text}
         </Text>

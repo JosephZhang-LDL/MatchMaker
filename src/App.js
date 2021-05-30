@@ -10,16 +10,18 @@ import {
   Redirect,
 } from "react-router-dom";
 import MyCrushes from "./components/MyCrushes";
+import Account from "./components/Account";
 
 function App() {
   return (
     <ChakraProvider theme={theme}>
+      <Router>
       <div>
         <Navbar />
       </div>
-      <Router>
         <Switch>
           <Route path="/my-crushes" exact render={() => <MyCrushes />} />
+          <Route path="/account" exact render={() => <Account />} />
           <Route
             path="/"
             exact

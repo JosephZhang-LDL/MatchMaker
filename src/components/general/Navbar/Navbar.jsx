@@ -8,7 +8,7 @@ const Navbar = (props) => {
   return (
     <Flex py=".75em" px="5em" boxShadow="base" justify="space-between">
       <Text color="green.500" fontSize="28px" fontWeight="bold">
-        Matchmaker
+        MatchMe
       </Text>
       <Flex align="center">
         <MenuItem text="My Crushes" link="my-crushes" />
