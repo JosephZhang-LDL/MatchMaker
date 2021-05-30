@@ -46,7 +46,7 @@ const MatchBox = (props) => {
       border="1px solid"
       borderColor="gray.200"
       py="6"
-      px="4"
+      px="6"
       boxShadow="sm"
     >
       <Row justify="center" width="100%">
@@ -59,8 +59,8 @@ const MatchBox = (props) => {
         <Text fontSize="18px" color="gray.400">@Username</Text>
       </Row>
       <HStack mt="4">
-        <Button width="50%">Follow</Button>
-        <Button width="50%" minWidth="50px" colorScheme="blue"><IoPaperPlaneOutline size="20px" /></Button>
+        <Button width="70%">Follow</Button>
+        <Button width="30%" minWidth="50px" colorScheme="blue"><IoPaperPlaneOutline size="20px" /></Button>
       </HStack>
     </Flex>
   );
