@@ -11,24 +11,28 @@ import {
 } from "react-router-dom";
 import MyCrushes from "./components/MyCrushes";
 import Account from "./components/Account";
+import { Login, Register } from "./components/LoginRegister";
 
 function App() {
   return (
     <ChakraProvider theme={theme}>
       <Router>
-      <div>
-        <Navbar />
-      </div>
         <Switch>
-          <Route path="/my-crushes" exact render={() => <MyCrushes />} />
-          <Route path="/account" exact render={() => <Account />} />
-          <Route
-            path="/"
-            exact
-            render={(props) => {
-              return <Redirect to="/my-crushes" />;
-            }}
-          />
+          <Route path="/login" exact render={() => <Login />} />
+          <Route path="/register" exact render={() => <Register />} />
+          <div>
+            <div>
+              <Navbar />
+            </div>
+            <Route path="/my-crushes" exact render={() => <MyCrushes />} />
+            <Route path="/account" exact render={() => <Account />} />
+            <Route
+              path="/*"
+              render={(props) => {
+                return <Redirect to="/my-crushes" />;
+              }}
+            />
+          </div>
         </Switch>
       </Router>
     </ChakraProvider>
