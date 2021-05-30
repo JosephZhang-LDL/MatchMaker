@@ -1,7 +1,8 @@
 import React from "react";
-import { Box, Flex, HStack, Spacer, VStack } from "@chakra-ui/react";
+import { Box, Flex, Spacer } from "@chakra-ui/react";
 import Sidebar from "./Sidebar";
 import CrushAdder from "./CrushAdder";
+import Matches from "./Matches";
 
 const MyCrushesContainer = (props) => {
   return (
@@ -11,6 +12,7 @@ const MyCrushesContainer = (props) => {
         <Spacer flex="3%" />
         <Box width="100%" direction="column">
           <CrushAdder />
+          <Matches />
         </Box>
       </Flex>
     </Box>
