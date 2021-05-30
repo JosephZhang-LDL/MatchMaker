@@ -16,10 +16,10 @@ import _ from "lodash";
 
 const data = [
   {
-    name: "Joe Biden",
+    name: "Barack Obama",
     profPic:
-      "https://media.distractify.com/brand-img/5wNVKV854/0x0/joe-biden-memes-1586543791437.jpg",
-    username: "bidenlikesyou",
+      "https://yt3.ggpht.com/ytc/AAUvwnj6cW0Yb5bHhb0QsdWh_f1ZHTJalauiIxbVxLn9=s900-c-k-c0x00ffffff-no-rj",
+    username: "obaaamama",
   },
   {
     name: "Arnold",
@@ -30,7 +30,7 @@ const data = [
   {
     name: "BTS Jungkook",
     profPic:
-      "https://kenyabtsarmy.files.wordpress.com/2020/07/jungkook-poem-letter-to-bts-3-1.jpg?w=564",
+      "https://img.republicworld.com/republic-prod/stories/promolarge/xxhdpi/yynm6kdyofldnkll_1604397848.jpeg",
     username: "jk.official",
   },
 ];
