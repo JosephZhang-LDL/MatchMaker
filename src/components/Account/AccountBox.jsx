@@ -1,10 +1,11 @@
 import React from "react";
-import { Box, Flex, Heading, Input, Text, FormControl, Link, Button } from "@chakra-ui/react";
+import { Box, Flex, Heading, Input, Text, FormControl, Link, Button, Avatar } from "@chakra-ui/react";
 import { TabContainer, Row, Col } from "../general/Standard";
 
 const data = {
   name: "Kevin Nguyen",
   username: "fboiknguyen",
+  profPic: "https://p7.pstatp.com/origin/pgc-image/4b4fae11e53e4c6bb84587b51b700df2.jpeg"
 };
 
 const AccountBox = (props) => {
@@ -13,7 +14,10 @@ const AccountBox = (props) => {
       <Flex justify="center">
         <TabContainer flexDir="column" py="6" px="6" width="50%" minWidth="400px">
           <Row justify="center" textAlign="center">
-            <Heading>My Account</Heading>
+            <Heading fontSize="28px">My Account</Heading>
+          </Row>
+          <Row mt="4" justify="center" textAlign="center">
+              <Avatar size="xl" src={data.profPic} />
           </Row>
           <form>
             <Row mt="4">
